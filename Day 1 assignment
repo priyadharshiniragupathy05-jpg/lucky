@@ -1,0 +1,4 @@
+ create database E_commerce; 
+ use E_commerce;
+ create table Amazon (product_id int, product_name varchar(20), price int, quantity int);
+ select * from amazon;

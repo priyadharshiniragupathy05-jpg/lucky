@@ -1,0 +1,14 @@
+use E_commerce; 
+
+create table bank (Cust_id int primary key, Cust_name varchar (10), 
+Bank_Balance decimal (15,10), active_status varchar(10));
+INSERT INTO Bank (cust_id, cust_name, bank_balance, active_status) VALUES
+(1, 'Priya', 1200.00, 'Active'),
+(2, 'pavun', 500.00, 'Active'),
+(3, 'smitha', 0.00, 'Active'),
+(4, 'merlin', 250.75, 'Active'),
+(5, 'Arun', 0.00, 'Inactive');
+set sql_safe_updates = 0;
+update Bank set active_status = 'Inactive' where bank_balance < 500;
+delete from bank where bank_balance =0 and active_status = 'inactive'; 
+select * from bank;

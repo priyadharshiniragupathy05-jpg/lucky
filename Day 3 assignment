@@ -1,0 +1,7 @@
+use e_commerce;
+create table shopping (product_id int, product_name varchar(20), price int);
+insert into shopping values(1, 'shirts', 500), (2, 'Tops', 650), (3, 'saree', 800), (4, 'Dress', 499), (5, 'salvar', 700);
+insert into shopping values (6, 'shirts', 800), (7, 'Tops', 450), (8, 'saree', 399);
+
+select product_name, max(price) from shopping group by product_name;
+select product_name, min(price) from shopping group by product_name;

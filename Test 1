@@ -1,0 +1,26 @@
+use students;
+
+
+create table students (std_id INT PRIMARY KEY,
+    std_name VARCHAR(50),
+    course VARCHAR(50));
+    insert into students values (1,'priya', 'Bcom'), (2, 'pavun', 'BSC') , (3, 'Anusha', 'Bcom'),(4, 'selva', 'BCA');
+    
+ 
+ create table College (
+    std_id INT,
+    college_id INT PRIMARY KEY,
+    college_name VARCHAR(100));
+    insert into college values (1, 101, 'SDNBV vaishnav college'), (2, 102, 'MCC college'), (3, 103, 'loyala college'), (4, 104, 'Gurunanak college');
+
+
+select Students.std_id,
+       Students.std_name,
+       Students.course,
+       College.college_id,
+       College.college_name
+from Students
+LEFT OUTER JOIN College
+on Students.std_id = College.std_id;
+
+select lower(substring ('HELLO WORLD', 7));

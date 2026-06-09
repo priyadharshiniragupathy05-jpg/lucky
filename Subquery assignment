@@ -1,0 +1,13 @@
+use company;
+create table students(st_id int primary key, std_name varchar(50), subject varchar(50), Mark int, course varchar(50));
+insert into students values(1, 'vijay', 'Maths', 80, 'BSC'), (2, 'Meena', 'English', 75, 'BA'), 
+(3, 'Ajay', 'science', 70, 'BSC'), (4, 'shruthi', 'Maths', 60, 'BSC'), (5, 'shyam', 'science', 90, 'BSC');
+
+select avg(mark)from students;
+select *from students where mark>(select avg(mark)from students);
+
+select *from students
+where mark IN (
+    select mark
+    from students
+    where mark > 50);
